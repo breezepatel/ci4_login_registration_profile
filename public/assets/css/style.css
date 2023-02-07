@@ -1,0 +1,25 @@
+body{
+    background-color:rgb(29, 121, 126);
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+}
+
+#profile{
+    background-color: #851986;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");  
+ 
+}
+
+#dashboard{
+    background-color:white;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");   
+}
+#login{
+    background-color:rgb(198, 42, 42);
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+}
+
+#register{
+    background-color:darkgoldenrod;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+}
+
