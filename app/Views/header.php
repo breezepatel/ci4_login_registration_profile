@@ -41,7 +41,7 @@
                             <a class="nav-link" href="/profile">Profile</a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'listall' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/listall">List all</a>
+                            <a class="nav-link" href="/listall/">List all</a>
                         </li>
 
                     </ul>

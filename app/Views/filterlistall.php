@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12 ">
 
-                <h1> Current User Name :<?= $user['firstname'] ?></h1>
+                <h1> Current User Name : <?= session()->get('firstname') ?></h1>
 
                 <div class="container mt-4">
                     <div class="row">
@@ -59,9 +59,10 @@
                                             </tr>
                                         <?php } ?>
                                     </table>
-                                    <div>
-                                        <?php  echo $pager->links(); ?>
-                                    </div>
+                             <div>
+                                <a class="nav-link" href="/listall/">
+                                <button class="btn btn-primary">List All Users</button></a>
+                             </div>
 
                                 </div>
                             </div>

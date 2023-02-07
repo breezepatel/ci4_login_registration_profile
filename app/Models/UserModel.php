@@ -18,11 +18,17 @@ class UserModel extends Model
 
   public function search($keyword)
   {
-    $this->like('firstname',$keyword);
-    $this->like('firstname',$keyword);
+    
+    $this->like('firstname', $keyword);
+    $this->orlike('lastname', $keyword);
+    $this->orlike('email', $keyword);
+    $this->orlike('gender', $keyword);
+    $this->orlike('age', $keyword);
+    $query = $this->get();
+    return $query->getResultArray();
 
-    return $this->get('user')->result_array();
   }
+
 
   protected function beforeInsert(array $data)
   {

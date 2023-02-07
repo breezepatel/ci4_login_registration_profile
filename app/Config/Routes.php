@@ -48,7 +48,10 @@ $routes->get('dashboard', 'Dashboard::index',['filter' => 'auth']);
 
 $routes->get('listall', 'Listall::index',['filter' => 'auth']);
 
+$routes->get('listall/search', 'Listall::search',['filter' => 'auth']);
+
 $routes->get('logout', 'Users::logout');
+$routes->get('delete', 'Users::delete');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

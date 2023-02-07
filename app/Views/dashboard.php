@@ -6,7 +6,7 @@
       
     <h1>Greeting, from <img src="https://adeptstation.com/assets/images/adeptstation_logo.png" alt="">  </h1>
     
-    <h1> <?= session()->get('firstname') ?></h1>
+    <h1> <?= $user['firstname'] ?></h1>
 
     </div>
   </div>

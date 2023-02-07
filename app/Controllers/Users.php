@@ -194,10 +194,19 @@ class Users extends BaseController
 
 	public function logout()
 	{
-
 		session()->destroy();
 		return redirect()->to('/');
 	}
+
+	public function delete()
+	{		
+		$model = new UserModel();
+		$session = session();
+ 		$id = session()->get('id');
+
+		$model->delete($id);
+		session()->destroy();
+		return redirect()->to('/');	}
 }
 
 

@@ -13,6 +13,11 @@
                             <?= session()->get('success') ?>
                         </div>
                     <?php endif; ?>
+                    <?php if (session()->get('delete')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= session()->get('delete') ?>
+                        </div>
+                    <?php endif; ?>
 
                     <form class="" action="/" method="post">
 

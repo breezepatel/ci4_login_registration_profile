@@ -10,6 +10,10 @@ class Listall extends BaseController
         $session = \Config\Services::session();
         $data['session'] = $session;
 
+
+        $model = new UserModel();
+        $data['user'] = $model->where('id', session()->get('id'))->first();
+        
         $model = new UserModel();
         $data['registered'] = $model->paginate(2);
         $data['pager'] = $model->pager;
@@ -26,16 +30,15 @@ class Listall extends BaseController
         $data=[];
         $model = new UserModel();
 
-        if($this->request->getPost('keyword')==''){
-            redirect("/listall");
-        }else {
+        if($this->request->getPost()){
+          
             $keyword=$this->request->getPost('keyword');
-            $data['result']=$this->$model->search($keyword);
+            $data['registered'] = $model->search($keyword);
         }
         // $data['registered'] = $registerArray;
         
         echo view('header');
-		echo  view('listall', $data);
+		echo  view('filterlistall', $data);
 		echo view('footer');
     }
 }

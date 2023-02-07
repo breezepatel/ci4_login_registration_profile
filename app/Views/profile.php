@@ -6,7 +6,7 @@
                 <div class="container">
                     <h3><?= $user['firstname'] . ' ' . $user['lastname'] ?></h3>
                     <hr>
-                    
+
                     <?php if (session()->get('success')) : ?>
                         <div class="alert alert-success" role="alert">
                             <?= session()->get('success') ?>
@@ -16,7 +16,7 @@
                     <!--Avatar-->
                     <div class="d-flex justify-content-center mb-4">
                         <?php if ($user['profile_image'] != '') : ?>
-                            <img src='<?= $user['profile_image']; ?>' class="rounded-circle" alt="Profile Pic" style="width: 150px;"/>
+                            <img src='<?= $user['profile_image']; ?>' class="rounded-circle" alt="Profile Pic" style="width: 150px;" />
                         <?php else : ?>
                             <img src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg" class="rounded-circle" alt="example placeholder" style="width: 150px;" />
                         <?php endif; ?>
@@ -85,11 +85,19 @@
                 </div>
             </div>
         </div>
-
     </div>
 
+    <div class="col-12 col-8 col-sm-4 text-left">
+            <button onclick="deleteConfirm()"class="btn btn-danger">Delete your account</button>
+    </div>
 
-
+    <script>
+        function deleteConfirm() {
+            if (confirm("Are you sure you want to delete?")) {
+                window.location.href = '<?php echo base_url('/delete') ?>';
+            }
+        }
+    </script>
 
     <!-- Modal -->
     <div class="modal fade" id="profileImageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -277,26 +285,6 @@
         </div>
     </div>
 
-
-    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js">
-        $(document).ready(function() {
-            $("#updateuser").validate();
-        });
-
-        jQuery(document).ready(function() {
-            jQuery("#updateuser").validate({
-                rules: {
-                    firstname: 'required',
-                    lastname: 'required',
-                    email: {
-                        required: true,
-                        email: true, //add an email rule that will ensure the value entered is valid email id.
-                        maxlength: 255,
-                    },
-                }
-            });
-        });
-    </script> -->
     <br>
     <br>
 
